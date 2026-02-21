@@ -250,20 +250,145 @@ nav{
 }
 #about{
     width:100vw;
-    height:100vh;
+    height:70vh;
     background:#7e79a6;
     justify-content:center;
     text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     
 }
+
 #about h1{
     font-family:'Sigmar';
     line-height: 3rem;
-    font-size:5rem;
-    color:WHITE;
-    text-shadow:1px 1px 5px #221d27;
+    font-size:3.5rem;
+    color:#ffffff;
+    /* text-shadow:1px 1px 5px #b3a7bb; */
     text-wrap: wrap;
     white-space: pre-wrap;
+}
+
+#about #about-body{
+    font-family: 'Raleway';
+    font-size:1rem;
+    color:hsl(0, 4%, 90%);
     position:relative;
-    top:15%;
+    text-align: center;
+    justify-content: center;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+#about #cover{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#about #cover i{
+    font-size:30px;
+    color:#4b515f;
+    padding:15px;
+    border-radius: 50%;
+}
+#grades i{
+    background: #ffcd81;
+}
+
+#pricing i{
+    background-color: #ffa98d;
+    width:12%;
+}
+#medium i{
+    background-color: #e790a1;
+}
+#about #cover h4{
+    color:white;
+    font-size:larger;
+    font-family: 'Nunito';
+    margin-top:2%;
+    text-decoration:#ada7a7 underline;
+}
+#about #cover p{
+    color:rgb(218, 209, 209);
+    font-family: nunito;
+    width:250px;
+}
+#about #cover div{
+    /* border-right:1px solid white;
+    border-left:1px solid white; */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+#about #cover span{
+    width:1px;
+    height:100px;
+    align-self: center;
+    background:rgb(173, 170, 170);
+}
+
+@media (max-width:760px){
+    #about #cover span{
+        /* display:none; */
+    }
+    #about #cover div, #about #cover p{
+        width:150px;
+    }
+    #pricing i{
+        width:12%;
+    }
+}
+
+@media (max-width:600px){
+    #about #cover span{
+        /* display:none; */
+    }
+    #about #cover div, #about #cover p{
+        width:150px;
+    }
+    #about #cover h4{
+        font-size:1rem;
+    }
+    #about #cover p{
+        font-size:0.8rem;
+        text-wrap: wrap;
+    }
+    #about #cover i{
+        font-size:1rem;
+        padding:10px;
+    }
+    #pricing i{
+        width:12%;
+    }
+}
+@media (max-width:500px){
+    #about #cover{
+        margin-top:5%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    #about #cover span{
+        height:50px;
+    }
+    #about{
+        height:fit-content;
+    }
+    #about h1{
+        font-size:2rem;
+        position:center;
+        margin: none;
+    }
+    #about #about-body{
+        font-size: 0.8rem;
+        margin-top:-10px;
+    }
+}
+
+#subjects{
+    width:100vw;
+    height:50vh;
 }
