@@ -110,6 +110,31 @@ nav{
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
+     animation-duration: 1s;
+    animation-name: bg;
+    transition:ease-in;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+
+}
+@keyframes bg{
+    from{
+        background-position: 0px 100px;
+    }
+    to{
+        background-position:center;
+    }
+}
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 .home-header h1{
     font-family:'Sigmar';
@@ -118,13 +143,23 @@ nav{
     color:hsl(224, 37%, 19%);
     text-wrap: wrap;
     white-space: pre-wrap;
+    transition:ease-in-out;
+    animation-duration: 1s;
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
 }
 .home-header p{
+    transition:ease-in-out;
     font-family: 'Raleway';
     font-size:1.5rem;
     letter-spacing: 0.2rem;
     color:hsl(226, 13%, 19%);
     margin-top:5px;
+    animation-duration: 1s;
+    animation-delay:1s;
+    animation-name: animate-pop;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
 }
 
 .home {
@@ -135,7 +170,12 @@ nav{
 .landing {
   width:clamp(100px, 30vw, 320px);
   margin-top:clamp(0%, 30vw, 5%);
-  
+ animation-duration: 1s;
+ transition:ease-in-out;
+ animation-name: rise-up;
+ animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+
 }
 
 .text-wrapper{
@@ -153,9 +193,9 @@ nav{
     align-items: center;
 }
 .home-header button{
+    transition: ease-in-out;
     padding:10px;
     border-radius:50px;
-   
     background:#4b515f;
     color:#ffffff;
     margin-top:5%;
@@ -163,7 +203,11 @@ nav{
     font-size:12px;
     border:none;
     letter-spacing:2px;
-    
+    animation-duration: 1s;
+    animation-delay:2s;
+    animation-name: animate-pop;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
     width:30%;
 
 }
@@ -178,12 +222,25 @@ nav{
     color:#ffcc02;
     text-decoration:wavy underline;
 }
+
 .home-header svg{
     width:clamp(50px, 30vw, 250px);
     height:clamp(50px, 30vw, 250px);
 }
 .text-wrapper img{
     width:2.5rem;
+   }
+
+@keyframes rise-up{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+   
+    }
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
 }
 @media (max-width:900px){
     .home-header{
@@ -268,6 +325,13 @@ nav{
     /* text-shadow:1px 1px 5px #b3a7bb; */
     text-wrap: wrap;
     white-space: pre-wrap;
+     animation-duration: 1s;
+     animation-timeline:view();
+     transition:ease-in-out;
+    animation-name: rise-up;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+
 }
 
 #about #about-body{
@@ -279,6 +343,13 @@ nav{
     justify-content: center;
     margin-left:10%;
     margin-right:10%;
+    animation-duration: 2s;
+     animation-timeline:view();
+     transition:ease-in-out;
+    animation-name: rise-up;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+
 }
 
 #about #cover{
@@ -286,12 +357,30 @@ nav{
     flex-direction:row;
     justify-content: space-around;
     flex-wrap: wrap;
+    animation-duration: 1s;
+    animation-range:20% 80%;
+     animation-timeline:view();
+     transition:ease-in-out;
+    animation-name: rise-up;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+
 }
 #about #cover i{
     font-size:30px;
     color:#4b515f;
     padding:15px;
     border-radius: 50%;
+   
+}
+#about #cover i:hover{
+     animation-duration: 1s;
+     animation-timeline:view();
+     transition:ease-in-out;
+    animation-name: rise-up;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+
 }
 #grades i{
     background: #ffcd81;
@@ -369,7 +458,8 @@ nav{
 
 #subjects{
     width:100vw;
-    height:50vh;
+    height:fit-content;
+    margin-bottom:5%;
 }
 
 #subjects #container img{
@@ -386,7 +476,7 @@ nav{
     border-radius:25px;
     margin:2%;
     animation: rise 5s normal both;
-    animation-range: entry 0% cover 45%;
+    animation-range: entry 0% cover 80%;
     animation-timeline: view();
     
 }
@@ -411,8 +501,8 @@ nav{
 }
 
 @keyframes animated-text{
-  from{width: 0;}
-  to{width: 100vw;}
+  from{width: 0; }
+  to{width: 380px;}
 }
 
 @keyframes animated-cursor{
@@ -426,29 +516,30 @@ nav{
     justify-content: space-around;
 }
 #subjects header{
+    
     color:#1f2842;
     font-family: 'Raleway';
     font-size:1.5rem;
     margin:3%;
-    text-align: center;
+    justify-self: center;
      border-right: solid 3px rgba(15, 1, 34, 0.75);
   white-space: nowrap;
   overflow: hidden;    
   animation: animated-text 8s steps(29,end) 1s 1 normal both,
              animated-cursor 600ms steps(29,end) infinite;
     animation-delay:2s;
-    animation-range: 20% 80%;
+    animation-range: 20% 60%;
     animation-timeline: view();
+    
 }
 @keyframes rise{
    
         from {
-    transform: translateY(100px); /* Starts 100px lower */
-
+    transform: translate(-100px); /* Starts 100px lower */
     opacity: 0;
   }
   to {
-    transform: translateY(0); /* Ends at original position */
+    transform: translate(0); /* Ends at original position */
     opacity: 1;
   
     }
@@ -488,5 +579,150 @@ nav{
     }
     #subjects header{
         font-size:1.3rem;
+        text-wrap:wrap;
     }
 }
+
+#contact{
+    width:100vw;
+    height:min-content;
+    background:#7e79a6;
+    margin:0;
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    
+}
+#contact form{
+    width:30%;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-around;
+    padding-top:20px;
+    animation: rise-up 5s normal both;
+    animation-range: entry 0% cover 70%;
+    animation-timeline: view();
+}
+#contact form #message{
+    height:90px;
+}
+
+#contact form input, #contact form textarea{
+    font-family: 'Raleway';
+    color:#090f20;
+    padding:5px;
+    margin:2%;
+}
+#contact form button{
+    padding:5px;
+    margin:2%;
+    font-family:raleway;
+    font-size:1rem;
+    background:#1f2842;
+    color:white;
+    font-weight:bold;
+}
+#contact .form-group{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#contact form button:hover{
+    cursor:pointer;
+    background:white;
+    color:#1f2842;
+}
+#contact #bar{
+    width:1px;
+    position:center;
+    height:400px;
+    align-self: center;
+    background:rgb(173, 170, 170);
+}
+#contact #text-area{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#contact #text-area header{
+    color:#fff;
+    font-family: 'Raleway';
+    font-size:2rem;
+     animation: rise 5s normal both;
+    animation-range: entry 0% cover 60%;
+    animation-timeline: view();
+}
+#contact #text-area .text-group{
+    display:flex;
+    color:white;
+    font-family:'Nunito';
+    font-size:1.2rem;
+     animation: rise-up 5s normal both;
+    animation-range: entry 0% cover 50%;
+    animation-timeline: view();
+}
+@media (max-width:850px){
+    #contact .form-group{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#contact #text-area header{
+    font-size:1.5rem;
+}
+}
+@media (max-width:630px){
+    #contact #bar{
+        display:none;
+    }
+    #contact{
+        flex-direction: column-reverse;
+    }
+    #contact .form-group{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#contact #text-area header{
+    font-size:1.5rem;
+}
+#contact #text-area{
+    display:block;
+    margin-top:5%;
+    margin-left:5%;
+}
+#contact form{
+    margin:auto;
+    width:90vw;
+}
+#contact #text-area .wrapper .text-group{
+    font-size:1rem;
+    position:relative;
+}
+#contact #text-area .wrapper{
+    display:flex;
+    width:fit-content;
+    gap:20px;
+    justify-content: space-between;
+}
+}
+@media (max-width:400px){
+    #contact #text-area .wrapper{
+    margin-top:3%;
+}
+#contact #text-area .wrapper .text-group{
+    font-size:0.5rem;
+
+}
+#contact #text-area header{
+    font-size:1rem;
+}
+#subjects header{
+  animation:none;
+  font-size:1rem;
+  margin-top:5%;
+}
+}
+
