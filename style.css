@@ -585,7 +585,7 @@ nav{
 
 #contact{
     width:100vw;
-    height:min-content;
+    height:max-content;
     background:#7e79a6;
     margin:0;
     display:flex;
