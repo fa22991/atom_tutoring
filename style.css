@@ -179,7 +179,8 @@ nav{
 }
 
 .text-wrapper{
-    padding-top:3rem;
+    margin-top:10%;
+    line-height:6rem;
 }
 
 .home-header{
@@ -255,13 +256,16 @@ nav{
         width:50%;
     }
 }
-@media (max-width:500px){
+@media (max-width:520px){
     .home-header{
         line-height:2rem;
-        padding-top:2rem;
+        margin-top:10%;
     }
     .text-wrapper img{
         width:1.5rem;
+    }
+    .text-wrapper{
+        line-height:3rem;
     }
     .home-header h1{
         font-size:2rem;
@@ -306,7 +310,8 @@ nav{
 }
 #about{
     width:100vw;
-    height:70vh;
+    height:100vh;
+    padding-bottom:10vh;
     background:#7e79a6;
     justify-content:center;
     text-align: center;
@@ -315,6 +320,7 @@ nav{
     justify-content: space-evenly;
     
 }
+
 
 #about h1{
     font-family:'Sigmar';
@@ -335,13 +341,16 @@ nav{
 
 #about #about-body{
     font-family: 'Raleway';
-    font-size:1rem;
+    font-size:1.1rem;
+    line-height:2rem;
     color:hsl(0, 4%, 90%);
     position:relative;
     text-align: center;
     justify-content: center;
     margin-left:10%;
     margin-right:10%;
+    margin-top:1.5%;
+    margin-bottom:1.5%;
     animation-duration: 2s;
      animation-timeline:view();
      transition:ease-in-out;
@@ -349,6 +358,62 @@ nav{
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
 
+}
+
+#tutor{
+    font-family:'raleway';
+    width:100vw;
+    height:auto;
+    position:relative;
+    margin-top:5%;
+    margin-bottom:5%;
+    background:white;
+    animation-duration: 1s;
+     animation-timeline:view();
+     transition:ease-in-out;
+    animation-name: rise-up;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+}
+#tutor-img{
+    box-sizing:border-box;
+    display:block;
+    flex:0 0 auto;
+    align-self:flex-start;
+    width:clamp(70px, 20vw, 150px);
+    height: auto;
+    object-fit:contain;
+    border: 3px solid #7e79a6;
+    padding: 6px;
+    justify-self:center;
+    align-self:center;
+}
+
+#about-tutor{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:flex-start;
+    gap:4%;
+    margin-bottom:5%;
+}
+#tutor-text #tutor-heading{
+    font-family:'Sigmar';
+    color:hsl(224, 37%, 19%);
+    font-size:clamp(1rem, 2.5vw, 1.5rem);
+
+}
+#about-tutor p, #about-tutor #tutor-text, #about-tutor #tutor-img{
+    margin-top:2.5%;
+    margin-bottom:2.5%;
+}
+
+#about-tutor-p{
+    font-family:'raleway';
+    max-width:40rem;
+    font-size:clamp(0.8rem, 1.8vw, 1rem);
+    line-height:1.4;
+    color:#4b515f;
 }
 
 #about #cover{
@@ -363,13 +428,14 @@ nav{
     animation-name: rise-up;
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
-
 }
+
 #about #cover i{
     font-size:30px;
     color:#4b515f;
     padding:15px;
     border-radius: 50%;
+    border:1.5px solid white;
    
 }
 #about #cover i:hover{
@@ -724,4 +790,3 @@ nav{
   margin-top:5%;
 }
 }
-
